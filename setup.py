@@ -6,7 +6,7 @@ with open("README.md") as fp:
 
 
 setuptools.setup(
-    name="hello_app",
+    name="questions_backend",
     version="0.0.1",
 
     description="An empty CDK Python app",
@@ -15,8 +15,8 @@ setuptools.setup(
 
     author="author",
 
-    package_dir={"": "hello_app"},
-    packages=setuptools.find_packages(where="hello_app"),
+    package_dir={"": "questions_backend"},
+    packages=setuptools.find_packages(where="questions_backend"),
 
     install_requires=[
         "aws-cdk.core==1.88.0",

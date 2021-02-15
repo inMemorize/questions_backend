@@ -57,7 +57,7 @@ class PipelineDevStack(core.Stack):
 
         dev = PipelineStage(
             self,
-            self.node.try_get_context('repository_name') + "-{}".format(STAGE),
+            self.node.try_get_context('service_name') + "-{}".format(STAGE),
             env={
                 'region': "ap-northeast-1",
                 'account': os.environ['DEV_ACCOUNT_ID']

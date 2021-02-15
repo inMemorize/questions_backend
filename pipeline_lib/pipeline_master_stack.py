@@ -57,7 +57,7 @@ class PipelineMasterStack(core.Stack):
                                          )
                                          )
 
-        stg = PipelineStage(self, self.node.try_get_context('repository_name') + "-{}".format(STAGE),
+        stg = PipelineStage(self, self.node.try_get_context('service_name') + "-{}".format(STAGE),
                             env={
                                 'region': "ap-northeast-1", 'account': os.environ['STG_ACCOUNT_ID']}
                             )
@@ -67,7 +67,7 @@ class PipelineMasterStack(core.Stack):
             action_name="Approval",
             run_order=stg_stage.next_sequential_run_order()
         ))
-        prod = PipelineStage(self, self.node.try_get_context('repository_name') + "-{}".format(STAGE2),
+        prod = PipelineStage(self, self.node.try_get_context('service_name') + "-{}".format(STAGE2),
                              env={
                                  'region': "ap-northeast-1", 'account': os.environ['PROD_ACCOUNT_ID']}
                              )
